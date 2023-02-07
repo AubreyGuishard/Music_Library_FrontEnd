@@ -6,8 +6,8 @@ const MusicTable = ({songs}) =>  {
     });
 
 
-    return(<section id = 'music'>
-        <h1>Our Music</h1>
+    return(<section id = 'music'> 
+        <h1>Music Library</h1>
         <table>
             <thead>
                 <tr>

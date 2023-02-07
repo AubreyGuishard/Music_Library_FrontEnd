@@ -55,7 +55,7 @@ function App() {
     
   return (
     <div id='app'>
-        <h1>Our Music</h1>
+        <h1>Music Library</h1>
         <button onClick={fetchMusic}></button>
     </div>
   )

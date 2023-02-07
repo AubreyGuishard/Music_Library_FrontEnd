@@ -6,7 +6,10 @@ return  <tr>
             <td>{song.release_date}</td>
             <td>{song.genre}</td>
             <td>
-                <button>Like</button>
+                <button>Delete Song</button>
+            </td>
+            <td>
+                <button>Edit Song</button>
             </td>
         </tr>;
 }
