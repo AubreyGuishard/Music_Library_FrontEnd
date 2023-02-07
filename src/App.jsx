@@ -1,7 +1,5 @@
 import axios from "axios";
-import { async } from "q";
-import { useEffect, useState } from "react";
-import MusicTable from "./MusicTable/MusicTable";
+import { useEffect } from "react";
 
 const DUMMY_DATA = [
     {
@@ -47,25 +45,20 @@ const DUMMY_DATA = [
 ];
 
 function App() {
-
-    const [songs, setSongs] = useState([])
-   async function fetchMusic(){
-        const response = await axios.get('http://127.0.0.1:8000/api/music/')
-        setSongs(response.data)
+    
+    function fetchMusic(){
+        const response = axios.get('http://127.0.0.1:8000/api/music/')
+        console.log(response.data)
     }
-    useEffect(() => {
-      fetchMusic();
-    }, []);
 
-    console.log('songs list: ', songs)
 
     
   return (
     <div id='app'>
-        
-        {/* <button onClick={fetchMusic}>FETCH THE TUNES</button> */}
-        <MusicTable songs={songs}/>
+        <h1>Our Music</h1>
+        <button onClick={fetchMusic}></button>
     </div>
   )
 }
+
 export default App;
