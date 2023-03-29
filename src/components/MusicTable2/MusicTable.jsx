@@ -1,6 +1,17 @@
+import { useState } from "react";
 import MusicRow from "../components/DummyFolder/MusicRow/MusicRow";
-
+import SearchBar from "../components/DummyFolder/MusicRow/SearchBar/SearchBar";
 const MusicTable = ({songs}) =>  {
+    const {searchKeyword, setSearchKeyword} = useState('');
+    const [filteredSongs, setFilteredSongs] = useState(songs);
+    useEffect(() => {
+        setFilteredSongs(songs)
+    }, [songs]);
+
+    const handleSearch = () => {
+        const newFilteredSongs = songs.filter((song) => song.title.toLowerCase().includes(searchKeyword.toLowerCase()),);
+        setFilteredSongs(newFilteredSongs);
+    };
     const rows = songs.map((song) => {
        return <MusicRow song={song}/>
     });
@@ -8,6 +19,7 @@ const MusicTable = ({songs}) =>  {
 
     return(<section id = 'music'> 
         <h1>Music Library</h1>
+        <SearchBar value={searchKeyword} onChange={setSearchKeyword} />
         <table>
             <thead>
                 <tr>
