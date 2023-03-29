@@ -1,7 +1,7 @@
 import axios from "axios";
 import { async } from "q";
 import { useEffect, useState } from "react";
-import MusicTable from "./MusicTable/MusicTable";
+import MusicTable from "./components/MusicTable/MusicTable";
 
 const DUMMY_DATA = [
     {
