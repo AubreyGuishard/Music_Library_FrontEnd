@@ -1,0 +1,9 @@
+.nav-bar{
+    background-color: black;
+    font-style:inherit;
+    border: black white;
+    color: white;
+    border-style:double;
+    /* border-radius: 5%; */
+    border-width: 10px;
+}

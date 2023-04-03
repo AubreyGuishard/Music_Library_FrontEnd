@@ -3,6 +3,7 @@ import { async } from "q";
 import { useEffect, useState } from "react";
 import AddSongForm from "./components/AddSongForm/AddSongForm";
 import MusicTable from "./components/MusicTable/MusicTable";
+import NavigationBar from "./components/NavigationBar/NavigationBar";
 
 
 
@@ -22,7 +23,7 @@ function App() {
     
   return (
     <div id='app'>
-        
+        <NavigationBar/>
         {/* <button onClick={fetchMusic}>FETCH THE TUNES</button> */}
         <AddSongForm/>
         <MusicTable songs={songs}/>
